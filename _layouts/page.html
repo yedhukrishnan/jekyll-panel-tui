@@ -1,0 +1,22 @@
+---
+layout: default
+---
+<article class="panel post-view">
+  <h2 class="paneltitle">{{ page.heading | default: page.title | upcase }}</h2>
+  <div class="post-content">
+    {{ content }}
+  </div>
+</article>
+
+{% if page.github_stats %}{% include github_stats.html %}{% endif %}
+{% if page.wakatime %}{% include wakatime.html %}{% endif %}
+{% if page.writing_stats %}{% include writing_stats.html %}{% endif %}
+{% if page.reading_stats %}{% include reading_stats.html %}{% endif %}
+
+{% if page.fork_note %}
+<p class="fork-note">
+  Built with
+  <a href="https://github.com/yedhukrishnan/jekyll-panel-tui" target="_blank">jekyll-panel-tui</a>.
+  Use it to build your own.
+</p>
+{% endif %}

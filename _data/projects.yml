@@ -1,0 +1,17 @@
+# Projects shown on /projects/ — grouped into sections, order is display order.
+# Fields per item: name (required), url, lang, year, desc, status (optional: active | archived)
+- section: Side Projects
+  items:
+    - name: my-blog
+      url: https://github.com/username/username.github.io
+      lang: Jekyll
+      year: 2026
+      desc: "This site, built with jekyll-panel-tui."
+      status: active
+
+    - name: old-tool
+      url: https://github.com/username/old-tool
+      lang: Python
+      year: 2021
+      desc: "A small command-line tool I no longer maintain."
+      status: archived

@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="{{ site.lang }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% seo %}
+  {% feed_meta %}
+  <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="head"><a href="/">{{ site.title }}</a></div>
+    <nav class="tabs">
+      <a href="/" {% if page.url == '/' %}class="active"{% endif %}>Posts</a>
+      <span class="sep">·</span>
+      <a href="/tags/" {% if page.url == '/tags/' %}class="active"{% endif %}>Tags</a>
+      <span class="sep">·</span>
+      <a href="/about/" {% if page.url == '/about/' %}class="active"{% endif %}>About</a>
+      {%- if site.data.resume %}
+      <span class="sep">·</span>
+      <a href="/resume/" {% if page.url == '/resume/' %}class="active"{% endif %}>Resume</a>
+      {%- endif %}
+    </nav>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <span>© {{ 'now' | date: '%Y' }} {{ site.author.name }}</span>
+    <span class="footer-links">
+      {% if site.github_username %}<a href="https://github.com/{{ site.github_username }}">github</a>{% endif %}
+      {% if site.twitter.username %}<a href="https://x.com/{{ site.twitter.username }}">x</a>{% endif %}
+      {% if site.linkedin_username %}<a href="https://www.linkedin.com/in/{{ site.linkedin_username }}/">linkedin</a>{% endif %}
+      {% if site.author.email %}<a href="mailto:{{ site.author.email }}">email</a>{% endif %}
+      <a href="/feed.xml">rss</a>
+    </span>
+  </footer>
+
+  <div class="keybar" aria-hidden="true">
+    <span><b>j k ↑ ↓</b> Navigate</span>
+    <span><b>Enter</b> Open</span>
+    <span><b>Esc</b> Home</span>
+  </div>
+
+  <script>
+    (function () {
+      var rows = Array.prototype.slice.call(document.querySelectorAll('tr.post-row'));
+      var sel = 0;
+
+      function typingTarget(e) {
+        var t = e.target;
+        return t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.isContentEditable);
+      }
+
+      function select(i) {
+        if (!rows.length) return;
+        var n = rows.length;
+        var dir = i >= sel ? 1 : -1;
+        var idx = (i + n) % n;
+        var tries = 0;
+        while (rows[idx].offsetParent === null && tries < n) {
+          idx = (idx + dir + n) % n;
+          tries++;
+        }
+        rows[sel].classList.remove('sel');
+        sel = idx;
+        rows[sel].classList.add('sel');
+        rows[sel].scrollIntoView({ block: 'nearest' });
+        var info = document.getElementById('selected-info');
+        if (info) {
+          var r = rows[sel];
+          info.innerHTML = 'Selected: <a href="' + r.dataset.url + '">' + r.dataset.title + '</a>' +
+            (r.dataset.excerpt ? ' — ' + r.dataset.excerpt : '');
+        }
+      }
+
+      if (rows.length) select(0);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.metaKey || e.ctrlKey || e.altKey || typingTarget(e)) return;
+        if (rows.length) {
+          if (e.key === 'j' || e.key === 'ArrowDown') { select(sel + 1); e.preventDefault(); }
+          else if (e.key === 'k' || e.key === 'ArrowUp') { select(sel - 1); e.preventDefault(); }
+          else if (e.key === 'Enter') {
+            var link = rows[sel].querySelector('a');
+            if (link) location.href = link.href;
+          }
+        } else {
+          if (e.key === 'j') { window.scrollBy({ top: 120, behavior: 'smooth' }); }
+          else if (e.key === 'k') { window.scrollBy({ top: -120, behavior: 'smooth' }); }
+        }
+        if (e.key === 'Escape' && location.pathname !== '/') { location.href = '/'; }
+      });
+
+      if (window.matchMedia('(hover: hover)').matches) {
+        rows.forEach(function (r, i) {
+          r.addEventListener('mouseenter', function () { select(i); });
+        });
+      }
+    })();
+  </script>
+
+  {% if site.goatcounter and jekyll.environment == "production" %}
+  <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  {% endif %}
+</body>
+</html>

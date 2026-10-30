@@ -1,0 +1,43 @@
+# Rendered on /resume/ by _includes/resume.html. Delete this file to hide the
+# Resume tab and page.
+summary: >-
+  One or two sentences about what you do and what you're interested in.
+
+experience:
+  - role: Software Engineer
+    org: Example Corp
+    dates: 2022 – present
+    points:
+      - What you built or own.
+      - A result you're proud of.
+
+  - role: Junior Developer
+    org: Another Company
+    dates: 2019 – 2022
+    points:
+      - What you worked on.
+
+projects:
+  - name: my-blog
+    url: https://github.com/username/username.github.io
+    year: 2026
+    tech: Jekyll · Ruby
+    desc: This site.
+
+education:
+  - degree: B.Sc. Computer Science
+    org: Example University
+    dates: 2015 – 2019
+    points:
+      - Anything worth noting.
+
+certifications:
+  - name: Some Certification
+    issuer: Issuer
+    date: 2023
+
+skills:
+  - group: Languages
+    items: [Ruby, Python, JavaScript]
+  - group: Tools
+    items: [Git, Docker, Vim]

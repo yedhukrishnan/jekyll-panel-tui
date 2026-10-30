@@ -1,0 +1,88 @@
+# Site
+title: Your Name
+description: >-
+  Notes on programming, books, and things I'm learning.
+url: "https://username.github.io"
+lang: en
+timezone: UTC
+
+author:
+  name: Your Name
+  email: you@example.com # shown in the footer and below each post; remove to hide
+
+# Used by jekyll-seo-tag
+twitter:
+  username: # your X handle, without the @; also adds the footer link
+social:
+  name: Your Name
+  links:
+    - https://github.com/username
+social_preview_image: # e.g. /assets/img/avatar.jpg
+
+# Footer GitHub link, Contributions panel and Projects page
+github_username: # e.g. octocat
+
+# Footer LinkedIn link: the name in your profile URL, linkedin.com/in/<name>
+linkedin_username:
+
+# WakaTime panel on the About page: JSON links from wakatime.com/share/embed
+# (Format: JSON), one per chart. Leave empty to hide the panel.
+# Names under `hide` never appear in any list; their share is counted in "Other".
+# Under `allow`, a list can name the only entries it shows; everything else is
+# dropped and the rest rescaled to 100%. Names match case-insensitively.
+wakatime:
+  languages: # https://wakatime.com/share/@<you>/<id>.json
+  editors:   # https://wakatime.com/share/@<you>/<id>.json
+  hide:
+    - Text
+  # allow:
+  #   editors:
+  #     - Neovim
+  #     - VS Code
+
+# Analytics (GoatCounter): your site code, e.g. "mysite" for mysite.goatcounter.com
+goatcounter:
+
+# Goodreads: "currently reading" on the home page and the Reading panel on About.
+# user_id is the number in your profile URL: goodreads.com/user/show/<user_id>-name
+goodreads:
+  user_id:
+
+# Comments (giscus): copy these from giscus.app. Leave repo empty to turn comments off.
+giscus:
+  repo:        # username/repo
+  repo_id:
+  category: General
+  category_id:
+
+# Build
+permalink: /posts/:title/
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+
+sass:
+  style: compressed
+
+exclude:
+  - _scripts
+  - README.md
+  - LICENSE
+  - Gemfile
+  - Gemfile.lock
+  - vendor

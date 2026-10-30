@@ -1,0 +1,21 @@
+# Bundler
+.bundle
+vendor
+Gemfile.lock
+
+# Jekyll
+_site
+.jekyll-cache
+.jekyll-metadata
+
+.DS_Store
+
+# Generated at build time by _scripts/fetch_goodreads.rb
+_data/currently_reading.json
+_data/reading.json
+
+# Generated at build time by _scripts/fetch_github.rb
+_data/github.json
+
+# Generated at build time by _scripts/fetch_wakatime.rb
+_data/wakatime.json

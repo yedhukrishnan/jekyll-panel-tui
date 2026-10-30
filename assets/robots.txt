@@ -1,0 +1,8 @@
+---
+permalink: /robots.txt
+---
+# All pages are open to crawlers. The sitemap lists every page.
+User-agent: *
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}

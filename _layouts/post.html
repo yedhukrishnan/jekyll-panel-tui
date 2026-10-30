@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<article class="panel post-view">
+  <h2 class="paneltitle">NOW READING</h2>
+  <header class="post-header">
+    <h1>{{ page.title }}</h1>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {%- if page.categories and page.categories.size > 0 %}
+      {%- for cat in page.categories %} <a class="category" href="/tags/?category={{ cat | slugify }}">{{ cat }}</a>{%- endfor %}
+      {%- endif %}
+      {%- if page.tags and page.tags.size > 0 %}
+      {%- for tag in page.tags %} <a class="tag" href="/tags/?tag={{ tag | slugify }}">#{{ tag }}</a>{%- endfor %}
+      {%- endif %}
+    </p>
+  </header>
+
+  <div class="post-content">
+    {{ content }}
+  </div>
+
+  {% include share.html %}
+
+  {% if page.comments and site.giscus.repo %}
+  <section class="comments">
+    <h2 class="comments-title">COMMENTS</h2>
+    {% include giscus.html %}
+  </section>
+  {% endif %}
+</article>
