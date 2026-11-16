@@ -100,6 +100,8 @@ wakatime:
     editors:
       - Claude Code
       - Neovim
+  rename:        # optional: show a WakaTime name under a different label
+    Mac: macOS
 ```
 
 WakaTime's own "Other" entry (time it couldn't classify) and anything under `hide` are dropped, and the remaining entries are rescaled to 100%. With `allow`, anything not named (browsers, Slack, ...) is dropped as well.

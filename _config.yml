@@ -30,6 +30,7 @@ linkedin_username:
 # Names under `hide` are dropped from every list and the rest rescaled to 100%.
 # Under `allow`, a list can name the only entries it shows; everything else is
 # dropped and the rest rescaled to 100%. Names match case-insensitively.
+# Under `rename`, WakaTime names are displayed under a different label.
 wakatime:
   languages: # https://wakatime.com/share/@<you>/<id>.json
   editors:   # https://wakatime.com/share/@<you>/<id>.json
@@ -40,6 +41,8 @@ wakatime:
   #   editors:
   #     - Neovim
   #     - VS Code
+  # rename:
+  #   Mac: macOS
 
 # Analytics (GoatCounter): your site code, e.g. "mysite" for mysite.goatcounter.com
 goatcounter:
