@@ -33,6 +33,7 @@ linkedin_username:
 wakatime:
   languages: # https://wakatime.com/share/@<you>/<id>.json
   editors:   # https://wakatime.com/share/@<you>/<id>.json
+  operating_systems: # https://wakatime.com/share/@<you>/<id>.json
   hide:
     - Text
   # allow:
