@@ -6,6 +6,27 @@ It comes with optional live panels for GitHub contributions, WakaTime coding sta
 
 > **Note:** This theme was built with the help of [Claude](https://claude.ai).
 
+## Screenshots
+
+**Home**
+
+![Home page with the post index](docs/screenshots/home.png)
+
+**About page**
+
+![About page: find me links and GitHub contributions](docs/screenshots/about-find-contributions.png)
+
+![About page: WakaTime toolbox](docs/screenshots/about-toolbox.png)
+
+![About page: writing activity and reading stats](docs/screenshots/about-writing-reading.png)
+
+<details>
+<summary>Full About page</summary>
+
+![Full About page](docs/screenshots/about-full.png)
+
+</details>
+
 ## Quick start
 
 1. Click **Use this template** on GitHub to create your own repo. Name it `<your-username>.github.io`, or use any name with a custom domain.
