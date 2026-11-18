@@ -1,5 +1,7 @@
 # jekyll-panel-tui
 
+**[Live preview →](https://yedhu.me)** My blog running on this theme.
+
 A dark, terminal-style Jekyll theme for blogs, inspired by text user interfaces and old BIOS setup screens: monospace text, a blue title bar, amber panel titles and keyboard navigation (`j`/`k` or arrows to move, Enter to open, Esc to go home).
 
 It comes with optional live panels for GitHub contributions, WakaTime coding stats (languages, editors and operating systems) and Goodreads reading, refreshed daily by GitHub Actions, plus a writing activity panel built from your own posts.
